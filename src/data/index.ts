@@ -1,8 +1,8 @@
 import New_ARRIVALS from "../assets/images/product-detail-02.jpg"
 import TOP_SELLING from "../assets/images/product-detail-03.jpg"
 import MEN_BANNER from "../assets/images/slide-03.jpg"
-import WOMEN_BANNER from "../assets/images/slide-01.jpg"
-import ACCESSORIES_BANNER from "../assets/images/gallery-09.jpg"
+import WOMEN_BANNER from "../assets/images/banner-01.jpg"
+import ACCESSORIES_BANNER from "../assets/images/banner-03.jpg"
 
 export const data = {
   "new_arrivals": [
