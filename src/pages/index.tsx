@@ -76,7 +76,7 @@ const LandingPage = () => {
           trigger: card!,
           start: "top center"
         },
-        ease: "power1.inOut"
+        ease: "power3.Out"
       })
     })
 
@@ -128,28 +128,20 @@ const LandingPage = () => {
         }
       </section>
 
-      <HomeSection key={"new_arrivals"} title="New Arrivals" className="">
-        <div className="overflow-x-hidden w-[calc(100vw_-_12px)]">
-          <div className="w-full overflow-x-scroll no-scrollbar px-4 lg:px-8 flex items-stretch justify-between gap-x-6">
-            {
-              data.new_arrivals.map(({ name, price, rating, src, isDiscount, old_price }, index) => (
-                <ProductCard key={name} id={(index + 1).toString()} name={name} price={price} rating={rating} img_src={src} isDiscount={isDiscount} oldPrice={old_price} />
-              ))
-            }
-          </div>
-        </div>
+      <HomeSection key={"new_arrivals"} title="New Arrivals">
+        {
+          data.new_arrivals.map(({ name, price, rating, src, isDiscount, old_price }, index) => (
+            <ProductCard key={name} id={(index + 1).toString()} name={name} price={price} rating={rating} img_src={src} isDiscount={isDiscount} oldPrice={old_price} />
+          ))
+        }
       </HomeSection>
 
-      <HomeSection key={"top_selling"} title="Top Selling" className="">
-        <div className="overflow-x-hidden w-[calc(100vw_-_12px)]">
-          <div className="w-full overflow-x-scroll no-scrollbar px-4 lg:px-8 flex items-stretch justify-between gap-x-6">
-            {
-              data.top_selling.map(({ name, price, rating, src, isDiscount, old_price }, index) => (
-                <ProductCard key={name} id={(index + 1).toString()} name={name} price={price} rating={rating} img_src={src} isDiscount={isDiscount} oldPrice={old_price} />
-              ))
-            }
-          </div>
-        </div>
+      <HomeSection key={"top_selling"} title="Top Selling">
+        {
+          data.top_selling.map(({ name, price, rating, src, isDiscount, old_price }, index) => (
+            <ProductCard key={name} id={(index + 1).toString()} name={name} price={price} rating={rating} img_src={src} isDiscount={isDiscount} oldPrice={old_price} />
+          ))
+        }
       </HomeSection>
     </main>
   )
