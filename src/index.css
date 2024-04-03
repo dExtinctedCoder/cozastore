@@ -1,0 +1,103 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --position-before: 0deg
+    --position-after: 0deg
+    --width-after: 80%
+    --translate-x-before: 0
+    --translate-y-before: 0
+    --translate-x-after: 0
+    --translate-y-after: 0
+  }
+  @font-face {
+    font-family: Poppins-Regular;
+    src: url("./assets/fonts/Poppins/Poppins-Regular.ttf");
+  }
+  @font-face {
+    font-family: Montserrat-Regular;
+    src: url("./assets/fonts/Montserrat/Montserrat-Regular.ttf");
+  }
+  @font-face {
+    font-family: Montserrat-Bold;
+    src: url("./assets/fonts/Montserrat/Montserrat-Bold.ttf");
+  }
+  @font-face {
+    font-family: PlayfairDisplay-Regular;
+    src: url("./assets/fonts/PlayfairDisplay/PlayfairDisplay-Regular.ttf");
+  }
+  @font-face {
+    font-family: PlayfairDisplay-Bold;
+    src: url("./assets/fonts/PlayfairDisplay/PlayfairDisplay-Bold.ttf");
+  }
+  body {
+    font-family: Poppins-Regular;
+  }
+  body::-webkit-scrollbar {
+    @apply w-3;
+  }
+  body::-webkit-scrollbar-track {
+    @apply bg-[#F1F1F1];  
+  }
+  body::-webkit-scrollbar-thumb {
+    @apply bg-gray-400 rounded-2xl;
+  }
+}
+
+@layer utilities {
+  .pfd-regular {
+    @apply font-[PlayfairDisplay-Regular]
+  }
+  .pfd-bold {
+    @apply font-[PlayfairDisplay-Bold]
+  }
+  .mnt-regular {
+    @apply font-[Montserrat-Regular]
+  }
+  .mnt-bold {
+    @apply font-[Montserrat-Bold]
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none
+  }
+  .hamburger {
+    &::before,
+    &::after {
+      content: "";
+      @apply absolute w-full left-0 h-[5px] rounded-xl bg-gray-800;
+    }
+    &::before {
+      @apply top-0;
+    }
+    &::after {
+      @apply bottom-0 w-4/5;
+    }
+    &:focus {
+      @apply scale-[1.1125];
+      &::before,
+      &::after {
+        @apply bg-gray-400;
+      }
+      &>span {
+        @apply bg-gray-400;
+      }
+    }
+  }
+  #menu-hamburger {
+    &:focus-within {
+      scale: 1.125
+    }
+    &:focus-within {
+      &>span {
+        &:nth-child(odd) {
+          @apply bg-gray-500 shadow-gray-500
+        }
+      }
+    }
+  }
+  .icon-socials:focus>svg {
+    color: white
+  }
+}
