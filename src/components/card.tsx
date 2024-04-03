@@ -21,7 +21,7 @@ export const ProductCard = ({ id, name, price, rating, img_src, ...props }: Prod
   const formattedOldPrice = props?.isDiscount ? currencyFormmatter.format(props.oldPrice!) : null
 
   return (
-    <a href={`/product/${id}`} className="min-w-48 h-full flex flex-col rounded-md focus:outline-0 focus:bg-slate-300">
+    <a href={`/product/${id}`} className="card min-w-48 h-full flex flex-col rounded-md focus:outline-0 focus:bg-slate-300">
       <div className="w-full aspect-[1/1_!important] overflow-y-hidden shadow-lg rounded-md bg-gray-300 flex items-center justify-center">
         <img
           src={img_src}
@@ -130,7 +130,7 @@ export const CategoryCard = ({ category }: CategoryPropsType) => {
             </div>
             <div className="flex flex-col gap-y-1 items-center uppercase text-xl mnt-regular font-bold tracking-wide w-fit">
               <span className="cta-text">Shop now</span>
-              <span className="cta-dash h-1 bg-white w-0 mx-auto"></span>
+              <span className="cta-dash h-[2.5px] shadow-md bg-white w-0 mx-auto"></span>
             </div>
           </a>
         ) : null
